@@ -9,6 +9,31 @@ default_config:
 # Text to speech
 tts:
   - platform: google_translate
+sensor:
+  - platform: rest
+    name: garage_sensors
+    resource: http://192.168.88.172
+    json_attributes:
+      - variables
+    scan_interval: 600
+    value_template: 'OK'
+ - platform: template
+    sensors:
+      mining_temperature:
+        friendly_name: 'Temperature of Mining_room'
+        value_template: '{{ states.sensor.garage_sensors.attributes["variables"]["temperature"] }}'
+        device_class: temperature
+        unit_of_measurement: '°C'
+      basement_humidity:
+        friendly_name: 'Humidity of basement'
+        value_template: '{{ states.sensor.garage_sensors.attributes["variables"]["CellarHumidity"] }}'
+        device_class: humidity
+        unit_of_measurement: '%'
+      basement_temperature:
+        friendly_name: 'Temperature of basement'
+        value_template: '{{ states.sensor.garage_sensors.attributes["variables"]["CellarTemp"] }}'
+        device_class: temperature
+        unit_of_measurement: '°C'
 
 group: !include groups.yaml
 automation: !include automations.yaml
