@@ -16,7 +16,7 @@ sensor:
       - variables
     scan_interval: 600
     value_template: 'OK'
- - platform: template
+  - platform: template
     sensors:
       mining_temperature:
         friendly_name: 'Temperature of Mining_room'
