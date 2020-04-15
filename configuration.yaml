@@ -8,17 +8,20 @@ default_config:
 # Text to speech
 tts:
   - platform: google_translate
+
 mqtt:
-    broker: 192.168.88.17
-    client_id: entity_sens_diod
-    username: mqttusr
-    password: qwerty123
+  broker: 192.168.88.17
+  client_id: entity_sens_diod
+  username: mqttusr
+  password: qwerty123
+
 sensor:
   - platform: mqtt
     name: Brightness
     state_topic: "home-assistant/controller_states/sensor_diod"
     qos: 0
-    unit_of_measurement: "%
+    unit_of_measurement: '%'
+
 sensor:
   - platform: rest
     name: garage_sensors
