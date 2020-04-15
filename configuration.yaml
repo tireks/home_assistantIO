@@ -8,6 +8,13 @@ default_config:
 # Text to speech
 tts:
   - platform: google_translate
+
+mqtt:
+  broker: 192.168.88.17
+  client_id: entity_sens_diod
+  username: mqttusr
+  password: qwerty123
+  
 sensor:
   - platform: rest
     name: garage_sensors
@@ -33,13 +40,6 @@ sensor:
         value_template: '{{ states.sensor.garage_sensors.attributes["variables"]["CellarTemp"] }}'
         device_class: temperature
         unit_of_measurement: '°C'
-mqtt:
-  broker: 192.168.88.17
-  client_id: entity_sens_diod
-  username: mqttusr
-  password: qwerty123
-
-sensor:
   - platform: mqtt
     name: Brightness
     state_topic: "home-assistant/controller_states/sensor_diod"
