@@ -40,17 +40,17 @@ sensor:
         value_template: '{{ states.sensor.garage_sensors.attributes["variables"]["CellarTemp"] }}'
         device_class: temperature
         unit_of_measurement: '°C'
-  - platform: mqtt
-    name: Brightness
-    state_topic: "home-assistant/controller_states/sensor_diod"
-    qos: 0
-    unit_of_measurement: '%'
+ # - platform: mqtt
+  #  name: Brightness
+  #  state_topic: "home-assistant/controller_states/sensor_diod"
+  #  qos: 0
+  #  unit_of_measurement: '%'
     
 switch:
   - platform: mqtt
     name: "MQTT test diod"
-    state_topic: "/home-assistant/controller_states/sensor_diod/"
-    command_topic: "/home-assistant/controller_switches/sensor_diod/"
+    state_topic: "home-assistant/controller_states/sensor_diod"
+    command_topic: "home-assistant/controller_switches/sensor_diod"
     payload_on: "on_"
     payload_off: "off"
     state_on: "on_"
