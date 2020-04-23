@@ -53,6 +53,8 @@ switch:
     command_topic: "/home-assistant/controller_switches/sensor_diod/"
     payload_on: "on_"
     payload_off: "off"
+    state_on: "on_"
+    state_off: "off"
     qos: 0
     retain: true
 
