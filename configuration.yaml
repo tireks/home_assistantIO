@@ -14,11 +14,11 @@ mqtt:
   client_id: entity_sens_diod
   username: mqttusr
   password: qwerty123
-
+  
 sensor:
   - platform: rest
     name: garage_sensors
-    resource: http://192.168.88.34
+    resource: http://192.168.88.172
     json_attributes:
       - variables
     scan_interval: 600
@@ -40,7 +40,12 @@ sensor:
         value_template: '{{ states.sensor.garage_sensors.attributes["variables"]["CellarTemp"] }}'
         device_class: temperature
         unit_of_measurement: '°C'
-
+ # - platform: mqtt
+  #  name: Brightness
+  #  state_topic: "home-assistant/controller_states/sensor_diod"
+  #  qos: 0
+  #  unit_of_measurement: '%'
+    
 switch:
   - platform: mqtt
     name: "MQTT test diod"
