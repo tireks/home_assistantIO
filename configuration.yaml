@@ -18,10 +18,10 @@ mqtt:
 sensor:
   - platform: rest
     name: garage_sensors
-    resource: http://192.168.88.172
+    resource: http://192.168.88.34
     json_attributes:
       - variables
-    scan_interval: 600
+    scan_interval: 30
     value_template: 'OK'
   - platform: template
     sensors:
