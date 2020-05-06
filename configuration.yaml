@@ -113,7 +113,7 @@ binary_sensor:
     device_class: garage_door
   - platform: mqtt
     name: Boiler_light
-    state_topic: "home-assistant/sensors/garage/Doors"
+    state_topic: "home-assistant/controller_STATES/lights/boiler_livolo_1"
     payload_on: "on"
     payload_off: "off"
     qos: 0
