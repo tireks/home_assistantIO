@@ -100,12 +100,24 @@ sensor:
     device_class: temperature
     qos: 0
     unit_of_measurement: '°C'
- 
- # - platform: mqtt
-  #  name: Brightness
-  #  state_topic: "home-assistant/controller_states/sensor_diod"
-  #  qos: 0
-  #  unit_of_measurement: '%'
+binary_sensor:
+  - platform: mqtt
+    name: Garage_doors
+    state_topic: "home-assistant/sensors/garage/Doors"
+    payload_on: "open"
+    payload_off: "close"
+    availability_topic: "home-assistant/sensors/garage/available"
+    payload_available: "on"
+    payload_not_available: "off"
+    qos: 0
+    device_class: garage_door
+  - platform: mqtt
+    name: Boiler_light
+    state_topic: "home-assistant/sensors/garage/Doors"
+    payload_on: "on"
+    payload_off: "off"
+    qos: 0
+    device_class: light
     
 switch:
   - platform: mqtt
