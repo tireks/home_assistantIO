@@ -21,7 +21,7 @@ sensor:
     resource: http://192.168.88.172
     json_attributes:
       - variables
-    scan_interval: 30
+    scan_interval: 300
     value_template: 'OK'
   - platform: template
     sensors:
@@ -40,6 +40,67 @@ sensor:
         value_template: '{{ states.sensor.garage_sensors.attributes["variables"]["CellarTemp"] }}'
         device_class: temperature
         unit_of_measurement: '°C'
+   - platform: mqtt
+     name: 1st_floor_in_circuit_temp
+     state_topic: "home-assistant/sensors/boiler_room/f1_in"
+     device_class: temperature
+     qos: 0
+     unit_of_measurement: '°C'
+   - platform: mqtt
+     name: 1st_floor_out_circuit_temp
+     state_topic: "home-assistant/sensors/boiler_room/f1_out"
+     device_class: temperature
+     qos: 0
+     unit_of_measurement: '°C'
+   - platform: mqtt
+     name: 1st_floor_mix_circuit_temp
+     state_topic: "home-assistant/sensors/boiler_room/f1_mix"
+     device_class: temperature
+     qos: 0
+     unit_of_measurement: '°C'
+   - platform: mqtt
+     name: 2nd_floor_in_circuit_temp
+     state_topic: "home-assistant/sensors/boiler_room/f2_in"
+     device_class: temperature
+     qos: 0
+     unit_of_measurement: '°C'
+   - platform: mqtt
+     name: 2nd_floor_out_circuit_temp
+     state_topic: "home-assistant/sensors/boiler_room/f2_out"
+     device_class: temperature
+     qos: 0
+     unit_of_measurement: '°C'
+   - platform: mqtt
+     name: 2nd_floor_mix_circuit_temp
+     state_topic: "home-assistant/sensors/boiler_room/f2_mix"
+     device_class: temperature
+     qos: 0
+     unit_of_measurement: '°C'
+   - platform: mqtt
+     name: base_floor_in_circuit_temp
+     state_topic: "home-assistant/sensors/boiler_room/base_in"
+     device_class: temperature
+     qos: 0
+     unit_of_measurement: '°C'
+   - platform: mqtt
+     name: base_floor_out_circuit_temp
+     state_topic: "home-assistant/sensors/boiler_room/base_out"
+     device_class: temperature
+     qos: 0
+     unit_of_measurement: '°C'
+   - platform: mqtt
+     name: base_floor_mix_circuit_temp
+     state_topic: "home-assistant/sensors/boiler_room/base_mix"
+     device_class: temperature
+     qos: 0
+     unit_of_measurement: '°C'
+   - platform: mqtt
+     name: outdoor_temp
+     state_topic: "home-assistant/sensors/outdoor_temp"
+     device_class: temperature
+     qos: 0
+     unit_of_measurement: '°C'
+ 
  # - platform: mqtt
   #  name: Brightness
   #  state_topic: "home-assistant/controller_states/sensor_diod"
