@@ -122,7 +122,7 @@ switch:
     state_on: "on"
     state_off: "off"
     qos: 0
-    retain: true
+    retain: false
 
 group: !include groups.yaml
 automation: !include automations.yaml
