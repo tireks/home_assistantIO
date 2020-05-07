@@ -1,1 +1,29 @@
-[]
+- id: '1588066302390'
+  alias: update time inside boiler arduino
+  description: ''
+  trigger:
+  - at: '17:10:00'
+    platform: time
+  condition: []
+  action:
+  - data:
+      payload_template: '{{now().hour}}'
+      topic: testst/data/hour
+    service: mqtt.publish
+  - data:
+      payload_template: '{{now().minute}}'
+      topic: testst/data/minute
+    service: mqtt.publish
+- id: '1588854194589'
+  alias: test automation
+  description: ''
+  trigger:
+  - payload: 'on'
+    platform: mqtt
+    topic: home-assistant/controller_STATES/lights/boiler_livolo_1
+  condition: []
+  action:
+  - data:
+      message: Boiler lights on
+      title: Alarm
+    service: persistent_notification.create
