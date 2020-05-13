@@ -1,6 +1,7 @@
 !*yaml
 !.gitignore
 !*.md
+!www/
 
 .storage
 .cloud
