@@ -1,9 +1,9 @@
 !*yaml
 !.gitignore
 !*.md
-!*www/
+!*www
 
-!.storage
+.storage
 .cloud
 .google.token
 
