@@ -293,15 +293,15 @@ var CONFIG = {
                   {
                      position: [0, 0],
                      type: TYPES.SENSOR_ICON,
-                     title: 'Hot water',
+                     title: 'Garage doors',
                      id: 'binary_sensor.garage_doors',
                      states: {
                      on: "open",
                      off: "close"
                      },
                      icons: {
-                     on: 'mdi-garage',
-                     off: 'mdi-garage-alert'
+                     on: 'mdi-garage-alert',
+                     off: 'mdi-garage'
                      },
                   },
                ]
