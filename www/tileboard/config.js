@@ -279,6 +279,34 @@ var CONFIG = {
                ]
             },
          ]
-      }
+      },
+      {
+         title: 'Importants page',
+         bg: 'images/bg3.png',
+         icon: 'mdi-alert-box-outline',
+         groups: [
+            {
+               title: 'Importants',
+               width: 2,
+               height: 3,
+               items: [
+                  {
+                     position: [0, 0],
+                     type: TYPES.SENSOR_ICON,
+                     title: 'Hot water',
+                     id: 'binary_sensor.garage_doors',
+                     states: {
+                     on: "open",
+                     off: "close"
+                     },
+                     icons: {
+                     on: 'mdi-garage',
+                     off: 'mdi-garage-alert'
+                     },
+                  },
+               ]
+            },
+         ]
+      },
    ],
 }
