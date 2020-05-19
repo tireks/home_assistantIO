@@ -1,9 +1,0 @@
-2020-05-19 14:00:05 WARNING (MainThread) [homeassistant.components.mqtt] Data in your configuration entry is going to override your configuration.yaml: {'broker': 'core-mosquitto', 'discovery': False, 'password': 'deiCohmoPahyo1Easheit2aimahvo5oigh8rai5peigeb8eifou7EeQuioxoo5Eh', 'port': 1883, 'protocol': '3.1.1', 'username': 'homeassistant'}
-2020-05-19 14:00:18 WARNING (MainThread) [homeassistant.core] Unable to remove unknown listener <function async_track_point_in_utc_time.<locals>.point_in_time_listener at 0x6e3881e0>
-2020-05-19 14:00:20 ERROR (MainThread) [homeassistant.core] Error doing job: Task exception was never retrieved
-Traceback (most recent call last):
-  File "/usr/src/homeassistant/homeassistant/helpers/storage.py", line 177, in _async_callback_delayed_write
-    await self._async_handle_write_data()
-  File "/usr/src/homeassistant/homeassistant/helpers/storage.py", line 189, in _async_handle_write_data
-    if "data_func" in data:
-TypeError: argument of type 'NoneType' is not iterable
