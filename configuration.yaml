@@ -13,7 +13,7 @@ history:
     domains:
       - persistent_notification
 
-stream:
+#stream:
 
 #camera:
 #  - platform: onvif
@@ -22,6 +22,18 @@ stream:
 #    password: tlJwpbo6
 #    port: 8899
 #    
+#ffmpeg:
+
+#camera:
+#  - platform: ffmpeg
+#    name: backyard_video
+#    input: rtsp://192.168.88.201:554/user=admin_password=tlJwpbo6_channel=1_stream=0.sdp?real_stream
+#  - platform: onvif
+#    name: Camera_cucina
+#    host: 192.168.88.201
+#    port: 8899
+#    username: "admin"
+#    password: ""
 
 mqtt:
   broker: 192.168.88.17
