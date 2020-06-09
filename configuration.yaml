@@ -34,7 +34,13 @@ history:
 #    port: 8899
 #    username: "admin"
 #    password: ""
-
+media_player:
+  - platform: androidtv
+    host: 192.168.88.27
+    name: "rn2_test"
+    adb_server_ip: 127.0.0.1
+    adb_server_port: 5037
+    
 mqtt:
   broker: 192.168.88.17
   client_id: entity_sens_diod
@@ -126,6 +132,13 @@ sensor:
     device_class: temperature
     qos: 0
     unit_of_measurement: '°C'
+  - platform: mqtt
+    name: rn2_batt
+    state_topic: "wallpanel/mywallpanel/sensor/battery"
+    device_class: battery
+    qos: 0
+    unit_of_measurement: '%'
+    value_template: "{{ value_json.value}}"
 binary_sensor:
   - platform: mqtt
     name: Garage_doors
