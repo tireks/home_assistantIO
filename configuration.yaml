@@ -134,7 +134,7 @@ sensor:
     unit_of_measurement: '°C'
   - platform: mqtt
     name: rn2_batt
-    state_topic: "wallpanel/mywallpanel/sensor/battery"
+    state_topic: "home-assistant/devices/wallpanel/mywallpanel/sensor/battery"
     device_class: battery
     qos: 0
     unit_of_measurement: '%'
@@ -150,6 +150,21 @@ binary_sensor:
     payload_not_available: "off"
     qos: 0
     device_class: garage_door
+  - platform: mqtt
+    name: rn2_screen
+    state_topic: "home-assistant/devices/wallpanel/mywallpanel/state"
+    payload_on: "True"
+    payload_off: "False"
+    device_class: opening
+    qos: 0
+    value_template: "{{ value_json.screenOn}}"
+  - platform: mqtt
+    name: wallpanel_pir
+    state_topic: "home-assistant/sensors/indoor_global/wallpanel_pir"
+    payload_on: "on"
+    payload_off: "off"
+    qos: 0
+    device_class: moving
     
 switch:
   - platform: mqtt

@@ -27,3 +27,77 @@
       message: Boiler lights on
       title: Alarm
     service: persistent_notification.create
+- id: '1591693868775'
+  alias: checks battery lvl wallpanel - 1
+  description: checks if wallpanel needs charge
+  trigger:
+  - below: '25'
+    entity_id: sensor.rn2_batt
+    platform: numeric_state
+  condition: []
+  action:
+  - data:
+      payload: low_battery
+      topic: home-assistant/controller_STATES/wallpanel/battery
+    service: mqtt.publish
+- id: '1591696552679'
+  alias: checks battery lvl wallpanel - 2
+  description: checks if it needs to stop charging wallpanel
+  trigger:
+  - above: '98'
+    entity_id: sensor.rn2_batt
+    platform: numeric_state
+  condition: []
+  action:
+  - data:
+      payload: high_battery
+      topic: home-assistant/controller_STATES/wallpanel/battery
+    service: mqtt.publish
+- id: '1592216388088'
+  alias: garage signalisation cam cntrl
+  description: ''
+  trigger:
+  - entity_id: binary_sensor.garage_doors
+    from: 'off'
+    platform: state
+    to: 'on'
+  condition: []
+  action:
+  - data:
+      command: am start -a android.intent.action.VIEW -d rtsp://192.168.88.201:554/user=admin_password=tlJwpbo6_channel=1_stream=0.sdp?real_stream
+        -t video/mp4
+      entity_id: media_player.rn2_test
+    service: androidtv.adb_command
+- id: '1592241141533'
+  alias: wallpanel screen cntrl-1
+  description: turning wallpanel screen on by pir
+  trigger:
+  - entity_id: binary_sensor.wallpanel_pir
+    from: 'off'
+    platform: state
+    to: 'on'
+  condition:
+  - condition: state
+    entity_id: binary_sensor.rn2_screen
+    state: 'off'
+  action:
+  - data:
+      command: input keyevent KEYCODE_POWER
+      entity_id: media_player.rn2_test
+    service: androidtv.adb_command
+- alias: wallpanel screen cntrl-2
+  description: turning wallpanel screen off by pir
+  trigger:
+  - entity_id: binary_sensor.wallpanel_pir
+    from: 'on'
+    platform: state
+    to: 'off'
+  condition:
+  - condition: state
+    entity_id: binary_sensor.rn2_screen
+    state: 'on'
+  action:
+  - data:
+      command: input keyevent KEYCODE_POWER
+      entity_id: media_player.rn2_test
+    service: androidtv.adb_command
