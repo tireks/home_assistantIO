@@ -32,7 +32,7 @@
   description: checks if wallpanel needs charge
   trigger:
   - below: '25'
-    entity_id: sensor.rn2_batt
+    entity_id: sensor.asus_panel_batt
     platform: numeric_state
   condition: []
   action:
@@ -45,7 +45,7 @@
   description: checks if it needs to stop charging wallpanel
   trigger:
   - above: '98'
-    entity_id: sensor.rn2_batt
+    entity_id: sensor.asus_panel_batt
     platform: numeric_state
   condition: []
   action:
@@ -64,9 +64,9 @@
   condition: []
   action:
   - data:
-      command: am start -a android.intent.action.VIEW -d rtsp://192.168.88.201:554/user=admin_password=tlJwpbo6_channel=1_stream=0.sdp?real_stream
+      command: am start -a android.intent.action.VIEW -d rtsp://192.168.88.213:554/user=admin_password=tlJwpbo6_channel=1_stream=0.sdp?real_stream
         -t video/mp4
-      entity_id: media_player.rn2_test
+      entity_id: media_player.asus_panel
     service: androidtv.adb_command
 - id: '1592241141533'
   alias: wallpanel screen cntrl-1
@@ -78,12 +78,12 @@
     to: 'on'
   condition:
   - condition: state
-    entity_id: binary_sensor.rn2_screen
+    entity_id: binary_sensor.asus_panel_screen
     state: 'off'
   action:
   - data:
       command: input keyevent KEYCODE_POWER
-      entity_id: media_player.rn2_test
+      entity_id: media_player.asus_panel
     service: androidtv.adb_command
 - alias: wallpanel screen cntrl-2
   description: turning wallpanel screen off by pir
@@ -94,10 +94,10 @@
     to: 'off'
   condition:
   - condition: state
-    entity_id: binary_sensor.rn2_screen
+    entity_id: binary_sensor.asus_panel_screen
     state: 'on'
   action:
   - data:
       command: input keyevent KEYCODE_POWER
-      entity_id: media_player.rn2_test
+      entity_id: media_player.asus_panel
     service: androidtv.adb_command

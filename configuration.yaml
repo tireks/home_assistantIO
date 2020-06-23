@@ -13,37 +13,17 @@ history:
     domains:
       - persistent_notification
 
-#stream:
-
-#camera:
-#  - platform: onvif
-#    host: 192.168.88.228
-#    username: admin
-#    password: tlJwpbo6
-#    port: 8899
-#    
-#ffmpeg:
-
-#camera:
-#  - platform: ffmpeg
-#    name: backyard_video
-#    input: rtsp://192.168.88.201:554/user=admin_password=tlJwpbo6_channel=1_stream=0.sdp?real_stream
-#  - platform: onvif
-#    name: Camera_cucina
-#    host: 192.168.88.201
-#    port: 8899
-#    username: "admin"
-#    password: ""
 media_player:
   - platform: androidtv
-    host: 192.168.88.27
-    name: "rn2_test"
+    host: 192.168.88.13
+    name: "asus_panel"
     adb_server_ip: 127.0.0.1
     adb_server_port: 5037
+    get_sources: false
     
 mqtt:
   broker: 192.168.88.17
-  client_id: entity_sens_diod
+  client_id: hass_mqtt_client
   username: mqttusr
   password: qwerty123
   
@@ -133,8 +113,8 @@ sensor:
     qos: 0
     unit_of_measurement: '°C'
   - platform: mqtt
-    name: rn2_batt
-    state_topic: "home-assistant/devices/wallpanel/mywallpanel/sensor/battery"
+    name: asus-panel_batt
+    state_topic: "home-assistant/devices/wallpanel/asus-panel/sensor/battery"
     device_class: battery
     qos: 0
     unit_of_measurement: '%'
@@ -151,8 +131,8 @@ binary_sensor:
     qos: 0
     device_class: garage_door
   - platform: mqtt
-    name: rn2_screen
-    state_topic: "home-assistant/devices/wallpanel/mywallpanel/state"
+    name: asus-panel_screen
+    state_topic: "home-assistant/devices/wallpanel/asus-panel/state"
     payload_on: "True"
     payload_off: "False"
     device_class: opening
