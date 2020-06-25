@@ -254,8 +254,8 @@ var CONFIG = {
       },
       {
          title: 'Garage_sensors',
-         bg: 'images/bg1.png',
-         icon: 'mdi-garage-variant',
+         bg: 'images/bg2.png',
+         icon: 'mdi-garage',
          groups:[
             {
                title: 'Temp/Hum_sensors',
@@ -268,20 +268,9 @@ var CONFIG = {
                      height: 1,
                      type: TYPES.SENSOR,
                      title: 'Humidity',
-                     subtitle: 'basement',
+                     //subtitle: 'basement',
                      id: 'sensor.basement_humidity',
-                     //unit: 'C', // override default entity unit
-                     state: false, // hidding state
-                  },
-                  {
-                     position: [1, 0],
-                     width: 1,
-                     height: 1,
-                     type: TYPES.SENSOR,
-                     title: 'Temperature',
-                     subtitle: 'basement',
-                     id: 'sensor.basement_temperature',
-                     unit: 'C', // override default entity unit
+                     unit: '%', // override default entity unit
                      state: false, // hidding state
                   },
                   {
@@ -290,7 +279,18 @@ var CONFIG = {
                      height: 1,
                      type: TYPES.SENSOR,
                      title: 'Temperature',
-                     subtitle: 'Mining_room',
+                     //subtitle: 'basement',
+                     id: 'sensor.basement_temperature',
+                     unit: 'C', // override default entity unit
+                     state: false, // hidding state
+                  },
+                  {
+                     position: [0, 2],
+                     width: 1,
+                     height: 1,
+                     type: TYPES.SENSOR,
+                     title: 'Temperature',
+                     //subtitle: 'Mining_room',
                      id: 'sensor.mining_temperature',
                      unit: 'C', // override default entity unit
                      state: false, // hidding state
