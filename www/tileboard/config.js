@@ -292,6 +292,8 @@ var CONFIG = {
                items: [
                   {
                      position: [0, 0],
+                     width: 2,
+                     height: 1,
                      type: TYPES.SENSOR_ICON,
                      title: 'Garage doors',
                      id: 'binary_sensor.garage_doors',
@@ -300,13 +302,70 @@ var CONFIG = {
                      off: "close"
                      },
                      icons: {
-                     on: 'mdi-garage-alert',
+                     on: 'mdi-alert-circle-outline',
                      off: 'mdi-garage'
                      },
+                  },
+                  {
+                     position: [0, 1],
+                     width: 1,
+                     height: 1,
+                     type: TYPES.SENSOR,
+                     title: 'Outdoor',
+                     id: 'sensor.outdoor_temp',
+                     unit: 'C', // override default entity unit
+                     state: false, // hidding state
                   },
                ]
             },
          ]
+      },
+      {
+         title: 'Garage_sensors',
+         bg: 'images/bg1.png',
+         icon: 'mdi-garage-variant',
+         groups:[
+            {
+               title: 'Temp/Hum_sensors',
+               width: 2,
+               height: 3,
+               items: [
+                  {
+                     position: [0, 0],
+                     width: 1,
+                     height: 1,
+                     type: TYPES.SENSOR,
+                     title: 'Humidity',
+                     subtitle: 'basement',
+                     id: 'sensor.basement_humidity',
+                     //unit: 'C', // override default entity unit
+                     state: false, // hidding state
+                  },
+                  {
+                     position: [1, 0],
+                     width: 1,
+                     height: 1,
+                     type: TYPES.SENSOR,
+                     title: 'Temperature',
+                     subtitle: 'basement',
+                     id: 'sensor.basement_temperature',
+                     unit: 'C', // override default entity unit
+                     state: false, // hidding state
+                  },
+                  {
+                     position: [0, 1],
+                     width: 1,
+                     height: 1,
+                     type: TYPES.SENSOR,
+                     title: 'Temperature',
+                     subtitle: 'Mining_room',
+                     id: 'sensor.mining_temperature',
+                     unit: 'C', // override default entity unit
+                     state: false, // hidding state
+                  },
+               ],
+            },
+         ],
       },
    ],
 }
