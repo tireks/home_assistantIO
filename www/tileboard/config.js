@@ -213,74 +213,6 @@ var CONFIG = {
          ]
       },
       {
-         title: 'Second page',
-         bg: 'images/bg2.png',
-         icon: 'mdi-numeric-2-box-outline',
-         groups: [
-            {
-               title: '',
-               width: 2,
-               height: 3,
-               items: [
-                  {
-                     position: [0, 0],
-                     width: 2,
-                     title: 'Short instruction',
-                     type: TYPES.TEXT_LIST,
-                     id: {}, // using empty object for an unknown id
-                     state: false, // disable state element
-                     list: [
-                        {
-                           title: 'Read',
-                           icon: 'mdi-numeric-1-box-outline',
-                           value: 'README.md'
-                        },
-                        {
-                           title: 'Ask on forum',
-                           icon: 'mdi-numeric-2-box-outline',
-                           value: 'home-assistant.io'
-                        },
-                        {
-                           title: 'Open an issue',
-                           icon: 'mdi-numeric-3-box-outline',
-                           value: 'github.com'
-                        }
-                     ]
-                  },
-                  {
-                     position: [0, 1.5],
-                     width: 1.5,
-                     height: 1,
-                     title: 'My Gauge Title',
-                     subtitle: '',
-                     type: TYPES.GAUGE,
-                     id: 'sensor.my_sample_sensor', // Assign the sensor you want to display on the gauge
-                     value: function(item, entity) {
-                        return entity.state;
-                     },
-                     settings: {
-                        size: 200, // Defaults to 50% of either height or width, whichever is smaller
-                        type: 'full', // Options are: 'full', 'semi', and 'arch'. Defaults to 'full'
-                        min: 0, // Defaults to 0
-                        max: 25000, // Defaults to 100
-                        cap: 'round', // Options are: 'round', 'butt'. Defaults to 'butt'
-                        thick: 8, // Defaults to 6
-                        label: 'My Gauge', // Defaults to undefined
-                        append: '@attributes.unit_of_measurement', // Defaults to undefined
-                        prepend: '$', // Defaults to undefined
-                        duration: 1500, // Defaults to 1500ms
-                        thresholds: { 0: { color: 'green'}, 80: { color: 'red' } }, // Defaults to undefined
-                        labelOnly: false, // Defaults to false
-                        foregroundColor: 'rgba(0, 150, 136, 1)', // Defaults to rgba(0, 150, 136, 1)
-                        backgroundColor: 'rgba(0, 0, 0, 0.1)', // Defaults to rgba(0, 0, 0, 0.1)
-                        fractionSize: 0, // Number of decimal places to round the number to. Defaults to current locale formatting
-                     },
-                  },
-               ]
-            },
-         ]
-      },
-      {
          title: 'Importants page',
          bg: 'images/bg3.png',
          icon: 'mdi-alert-box-outline',
@@ -363,9 +295,9 @@ var CONFIG = {
                      unit: 'C', // override default entity unit
                      state: false, // hidding state
                   },
-               ],
+               ]
             },
-         ],
+         ]
       },
-   ],
+   ]
 }
