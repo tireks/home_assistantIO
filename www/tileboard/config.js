@@ -149,18 +149,28 @@ var CONFIG = {
                      state: false, // hidding state
                   },
                   {
-                     position: [0, 1],
+                     position: [1, 0],
                      width: 2,
                      height: 1,
                      title: 'Complex sensor',
-                     id: {}, // since we are binding each list item to different sensor, so we simply use an empty object
+                     id: 'sensor.garage_sensors', // since we are binding each list item to different sensor, so we simply use an empty object
                      type: TYPES.TEXT_LIST,
                      state: false,
                      list:[
                         {
                            title: 'Velocity-fan speed',
                            icon: 'mdi-fan',
-                           value: '&sensor.garage_sensors.attributes.variables.vSpeed'
+                           value: '&attributes.variables.vSpeed'
+                        },
+                        {
+                           title: 'tempoff',
+                           icon: 'mdi-home-thermometer',
+                           value: '&attributes.variables.tempoff'
+                        },
+                        {
+                           title: 'tempmax',
+                           icon: 'mdi-home-thermometer-outline',
+                           value: '&attributes.variables.tempmax'
                         },
                      ]
                   },
