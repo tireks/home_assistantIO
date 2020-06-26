@@ -66,6 +66,290 @@ var CONFIG = {
 
    pages: [
       {
+         title: 'Importants page',
+         bg: 'images/bg1.png',
+         icon: 'mdi-alert-box-outline',
+         groups: [
+            {
+               title: 'Importants',
+               width: 2,
+               height: 3,
+               items: [
+                  {
+                     position: [0, 0],
+                     width: 2,
+                     height: 1,
+                     type: TYPES.SENSOR_ICON,
+                     title: 'Garage doors',
+                     id: 'binary_sensor.garage_doors',
+                     states: {
+                     on: "open",
+                     off: "close"
+                     },
+                     icons: {
+                     on: 'mdi-alert-circle-outline',
+                     off: 'mdi-garage'
+                     },
+                  },
+                  {
+                     position: [0, 1],
+                     width: 1,
+                     height: 1,
+                     type: TYPES.SENSOR,
+                     title: 'Outdoor',
+                     id: 'sensor.outdoor_temp',
+                     unit: 'C', // override default entity unit
+                     state: false, // hidding state
+                  },
+               ]
+            },
+         ]
+      },
+      {
+         title: 'Garage',
+         bg: 'images/bg2.png',
+         icon: 'mdi-garage',
+         groups:[
+            {
+               title: 'Temp/Hum_sensors',
+               width: 2,
+               height: 3,
+               items: [
+                  {
+                     position: [0, 0],
+                     width: 1,
+                     height: 1,
+                     type: TYPES.SENSOR,
+                     title: 'Humidity basement',
+                     //subtitle: 'basement',
+                     id: 'sensor.basement_humidity',
+                     unit: '%', // override default entity unit
+                     state: false, // hidding state
+                  },
+                  {
+                     position: [0, 1],
+                     width: 1,
+                     height: 1,
+                     type: TYPES.SENSOR,
+                     title: 'Temperature basement',
+                     //subtitle: 'basement',
+                     id: 'sensor.basement_temperature',
+                     unit: 'C', // override default entity unit
+                     state: false, // hidding state
+                  },
+                  {
+                     position: [0, 2],
+                     width: 1,
+                     height: 1,
+                     type: TYPES.SENSOR,
+                     title: 'Temperature mining_r',
+                     //subtitle: 'Mining_room',
+                     id: 'sensor.mining_temperature',
+                     unit: 'C', // override default entity unit
+                     state: false, // hidding state
+                  },
+               ]
+            },
+            {
+               title: 'Doors/Security',
+               width: 2,
+               height: 3,
+               items: [
+                  {
+                     position: [0, 0],
+                     width: 2,
+                     height: 1,
+                     type: TYPES.SENSOR_ICON,
+                     title: 'Garage doors',
+                     id: 'binary_sensor.garage_doors',
+                     states: {
+                     on: "open",
+                     off: "close"
+                     },
+                     icons: {
+                     on: 'mdi-alert-circle-outline',
+                     off: 'mdi-garage'
+                     },
+                  },
+               ]
+            },
+         ]
+      },
+      {
+         title: 'Boiler_room',
+         bg: 'images/bg3.jpeg',
+         icon: 'mdi-water-boiler',
+         groups: [
+            {
+               title: 'base floor circuit',
+               width: 2,
+               height: 3,
+               items:[
+                  {
+                     position: [0, 0],
+                     width: 1,
+                     height: 1,
+                     type: TYPES.SENSOR,
+                     title: 'IN circuit temperature',
+                     id: 'sensor.base_floor_in_circuit_temp',
+                     unit: 'C', // override default entity unit
+                     state: false, // hidding state
+                  },
+                  {
+                     position: [0, 1],
+                     width: 1,
+                     height: 1,
+                     type: TYPES.SENSOR,
+                     title: 'MIX circuit temperature',
+                     id: 'sensor.base_floor_mix_circuit_temp',
+                     unit: 'C', // override default entity unit
+                     state: false, // hidding state
+                  },
+                  {
+                     position: [0, 2],
+                     width: 1,
+                     height: 1,
+                     type: TYPES.SENSOR,
+                     title: 'OUT circuit temperature',
+                     id: 'sensor.base_floor_out_circuit_temp',
+                     unit: 'C', // override default entity unit
+                     state: false, // hidding state
+                  },
+               ]
+            },
+            {
+               title: '1-st floor circuit',
+               width: 2,
+               height: 3,
+               items: [
+                  {
+                     position: [0, 0],
+                     width: 1,
+                     height: 1,
+                     type: TYPES.SENSOR,
+                     title: 'IN circuit temperature',
+                     id: 'sensor.1st_floor_in_circuit_temp',
+                     unit: 'C', // override default entity unit
+                     state: false, // hidding state
+                  },
+                  {
+                     position: [0, 1],
+                     width: 1,
+                     height: 1,
+                     type: TYPES.SENSOR,
+                     title: 'MIX circuit temperature',
+                     id: 'sensor.1st_floor_mix_circuit_temp',
+                     unit: 'C', // override default entity unit
+                     state: false, // hidding state
+                  },
+                  {
+                     position: [0, 2],
+                     width: 1,
+                     height: 1,
+                     type: TYPES.SENSOR,
+                     title: 'OUT circuit temperature',
+                     id: 'sensor.1st_floor_out_circuit_temp',
+                     unit: 'C', // override default entity unit
+                     state: false, // hidding state
+                  },
+               ]
+            },
+            {
+               title: '2-nd floor circuit',
+               width: 2,
+               height: 3,
+               items:[
+                  {
+                     position: [0, 0],
+                     width: 1,
+                     height: 1,
+                     type: TYPES.SENSOR,
+                     title: 'IN circuit temperature',
+                     id: 'sensor.2nd_floor_in_circuit_temp',
+                     unit: 'C', // override default entity unit
+                     state: false, // hidding state
+                  },
+                  {
+                     position: [0, 1],
+                     width: 1,
+                     height: 1,
+                     type: TYPES.SENSOR,
+                     title: 'MIX circuit temperature',
+                     id: 'sensor.2nd_floor_mix_circuit_temp',
+                     unit: 'C', // override default entity unit
+                     state: false, // hidding state
+                  },
+                  {
+                     position: [0, 2],
+                     width: 1,
+                     height: 1,
+                     type: TYPES.SENSOR,
+                     title: 'OUT circuit temperature',
+                     id: 'sensor.2nd_floor_out_circuit_temp',
+                     unit: 'C', // override default entity unit
+                     state: false, // hidding state
+                  },
+               ]
+            },
+         ]
+      },
+      {
+         title: 'Panel-page',
+         bg: 'images/bg3.jpeg',
+         icon: 'mdi-water-boiler',
+         groups:[
+            {
+               title: 'ASUS-panel',
+               width: 2,
+               height: 3,
+               items:[
+                  {
+                     position: [0, 0],
+                     width: 1,
+                     height: 1,
+                     type: TYPES.SENSOR_ICON,
+                     title: 'pir',
+                     id: 'binary_sensor.wallpanel_pir',
+                     states: {
+                     on: "MOTION",
+                     off: "off"
+                     },
+                     icons: {
+                     on: 'mdi-motion-sensor',
+                     off: 'mdi-motion-sensor-off'
+                     },
+                  },
+                  {
+                     position: [0, 1],
+                     width: 1,
+                     height: 1,
+                     type: TYPES.SENSOR_ICON,
+                     title: 'screen',
+                     id: 'binary_sensor.asus_panel_screen',
+                     states: {
+                     on: "MOTION",
+                     off: "off"
+                     },
+                     icons: {
+                     on: 'mdi-monitor-dashboard',
+                     off: 'mdi-monitor-off'
+                     },
+                  },
+                  {
+                     position: [0, 2],
+                     width: 1,
+                     height: 1,
+                     type: TYPES.SENSOR,
+                     title: 'Battery',
+                     id: 'sensor.asus_panel_batt',
+                     unit: 'C', // override default entity unit
+                     state: false, // hidding state
+                  }
+               ]
+            },
+         ]
+      },
+      {
          title: 'Main page',
          bg: 'images/bg1.jpeg',
          icon: 'mdi-home-outline', // home icon
@@ -210,93 +494,6 @@ var CONFIG = {
 
                ]
             }
-         ]
-      },
-      {
-         title: 'Importants page',
-         bg: 'images/bg3.png',
-         icon: 'mdi-alert-box-outline',
-         groups: [
-            {
-               title: 'Importants',
-               width: 2,
-               height: 3,
-               items: [
-                  {
-                     position: [0, 0],
-                     width: 2,
-                     height: 1,
-                     type: TYPES.SENSOR_ICON,
-                     title: 'Garage doors',
-                     id: 'binary_sensor.garage_doors',
-                     states: {
-                     on: "open",
-                     off: "close"
-                     },
-                     icons: {
-                     on: 'mdi-alert-circle-outline',
-                     off: 'mdi-garage'
-                     },
-                  },
-                  {
-                     position: [0, 1],
-                     width: 1,
-                     height: 1,
-                     type: TYPES.SENSOR,
-                     title: 'Outdoor',
-                     id: 'sensor.outdoor_temp',
-                     unit: 'C', // override default entity unit
-                     state: false, // hidding state
-                  },
-               ]
-            },
-         ]
-      },
-      {
-         title: 'Garage_sensors',
-         bg: 'images/bg2.png',
-         icon: 'mdi-garage',
-         groups:[
-            {
-               title: 'Temp/Hum_sensors',
-               width: 2,
-               height: 3,
-               items: [
-                  {
-                     position: [0, 0],
-                     width: 1,
-                     height: 1,
-                     type: TYPES.SENSOR,
-                     title: 'Humidity',
-                     //subtitle: 'basement',
-                     id: 'sensor.basement_humidity',
-                     unit: '%', // override default entity unit
-                     state: false, // hidding state
-                  },
-                  {
-                     position: [0, 1],
-                     width: 1,
-                     height: 1,
-                     type: TYPES.SENSOR,
-                     title: 'Temperature',
-                     //subtitle: 'basement',
-                     id: 'sensor.basement_temperature',
-                     unit: 'C', // override default entity unit
-                     state: false, // hidding state
-                  },
-                  {
-                     position: [0, 2],
-                     width: 1,
-                     height: 1,
-                     type: TYPES.SENSOR,
-                     title: 'Temperature',
-                     //subtitle: 'Mining_room',
-                     id: 'sensor.mining_temperature',
-                     unit: 'C', // override default entity unit
-                     state: false, // hidding state
-                  },
-               ]
-            },
          ]
       },
    ]
