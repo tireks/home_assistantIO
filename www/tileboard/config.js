@@ -112,7 +112,7 @@ var CONFIG = {
          groups:[
             {
                title: 'Temp/Hum_sensors',
-               width: 2,
+               width: 3,
                height: 3,
                items: [
                   {
@@ -147,6 +147,22 @@ var CONFIG = {
                      id: 'sensor.mining_temperature',
                      unit: 'C', // override default entity unit
                      state: false, // hidding state
+                  },
+                  {
+                     position: [0, 1],
+                     width: 2,
+                     height: 1,
+                     title: 'Complex sensor',
+                     id: {}, // since we are binding each list item to different sensor, so we simply use an empty object
+                     type: TYPES.TEXT_LIST,
+                     state: false,
+                     list:[
+                        {
+                           title: 'Velocity-fan speed',
+                           icon: 'mdi-fan',
+                           value: '&sensor.garage_sensors.attributes.variables.vSpeed'
+                        },
+                     ]
                   },
                ]
             },
@@ -296,7 +312,7 @@ var CONFIG = {
       {
          title: 'Panel-page',
          bg: 'images/bg3.jpeg',
-         icon: 'mdi-water-boiler',
+         icon: 'mdi-monitor-dashboard',
          groups:[
             {
                title: 'ASUS-panel',
