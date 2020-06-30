@@ -4,6 +4,7 @@
 !.gitignore
 !*.md
 !*www
+!*custom_components/
 
 .storage
 .cloud

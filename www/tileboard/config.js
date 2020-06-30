@@ -90,6 +90,16 @@ var CONFIG = {
                      on: 'mdi-alert-circle-outline',
                      off: 'mdi-garage'
                      },
+                     customStyles: function(item, entity){
+                     if (entity.state === 'off') {
+                         return { backgroundColor: 'rgba(0,204,0,1)',
+			                 };
+			                 }
+                             else {
+	                            return { backgroundColor: 'rgba(255,0,0,1)',
+                            };
+                                }
+	                   },
                   },
                   {
                      position: [0, 1],
@@ -196,6 +206,16 @@ var CONFIG = {
                      on: 'mdi-alert-circle-outline',
                      off: 'mdi-garage'
                      },
+                     customStyles: function(item, entity){
+                     if (entity.state === 'off') {
+                         return { backgroundColor: 'rgba(0,204,0,1)',
+			                 };
+			                 }
+                             else {
+	                            return { backgroundColor: 'rgba(255,0,0,1)',
+                            };
+                                }
+	                   },
                   },
                ]
             },

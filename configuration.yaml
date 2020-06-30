@@ -20,6 +20,12 @@ media_player:
     adb_server_ip: 127.0.0.1
     adb_server_port: 5037
     get_sources: false
+weather:
+  - platform: openweathermap
+    api_key: a3cdbad786a30df287eb3b624d56cc93
+    mode: freedaily
+    latitude: 54.8523
+    longitude: 83.106
     
 mqtt:
   broker: 192.168.88.17

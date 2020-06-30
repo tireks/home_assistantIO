@@ -78,11 +78,11 @@
     to: 'on'
   condition:
   - condition: state
-    entity_id: binary_sensor.asus_panel_screen
+    entity_id: media_player.asus_panel
     state: 'off'
   action:
   - data:
-      command: input keyevent KEYCODE_POWER
+      command: POWER
       entity_id: media_player.asus_panel
     service: androidtv.adb_command
 - alias: wallpanel screen cntrl-2
@@ -98,6 +98,6 @@
     state: 'on'
   action:
   - data:
-      command: input keyevent KEYCODE_POWER
+      command: SLEEP
       entity_id: media_player.asus_panel
     service: androidtv.adb_command
